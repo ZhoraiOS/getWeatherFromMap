@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="getWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-MZ-J27">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xR-Cg-mWn">
+                                <rect key="frame" x="10" y="727" width="394" height="130"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.fog.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jtd-TT-Wjy">
+                                        <rect key="frame" x="10" y="10.5" width="113" height="110.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="ViewColor2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="113" id="F4w-MH-pK4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Bg-7T-8aw">
+                                        <rect key="frame" x="133" y="5" width="251" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4bM-cf-GUq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="44"/>
+                                        <color key="textColor" name="ViewColor2"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-VL-1Jt">
+                                        <rect key="frame" x="133" y="41" width="251" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
+                                        <color key="textColor" name="ViewColor2"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFU-mN-DpX">
+                                        <rect key="frame" x="133" y="89" width="251" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" name="ViewColor2"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Remove All Pins"/>
+                                        <connections>
+                                            <action selector="removePinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jtc-2V-0w9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ViewColor"/>
+                                <constraints>
+                                    <constraint firstItem="Jtd-TT-Wjy" firstAttribute="leading" secondItem="7xR-Cg-mWn" secondAttribute="leading" constant="10" id="5r5-2E-4Gw"/>
+                                    <constraint firstAttribute="trailing" secondItem="iFU-mN-DpX" secondAttribute="trailing" constant="10" id="8o3-BK-2CW"/>
+                                    <constraint firstItem="gRC-VL-1Jt" firstAttribute="centerY" secondItem="7xR-Cg-mWn" secondAttribute="centerY" id="IWC-m2-v6X"/>
+                                    <constraint firstItem="gRC-VL-1Jt" firstAttribute="leading" secondItem="Jtd-TT-Wjy" secondAttribute="trailing" constant="10" id="PVY-d9-v1P"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Bg-7T-8aw" secondAttribute="trailing" constant="10" id="VGF-cA-HNM"/>
+                                    <constraint firstAttribute="trailing" secondItem="gRC-VL-1Jt" secondAttribute="trailing" constant="10" id="ach-2h-nDf"/>
+                                    <constraint firstAttribute="height" constant="130" id="drZ-y2-6St"/>
+                                    <constraint firstItem="iFU-mN-DpX" firstAttribute="top" secondItem="gRC-VL-1Jt" secondAttribute="bottom" id="kZM-d8-biD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jtd-TT-Wjy" secondAttribute="bottom" constant="10" id="oNB-O4-GNG"/>
+                                    <constraint firstItem="0Bg-7T-8aw" firstAttribute="leading" secondItem="Jtd-TT-Wjy" secondAttribute="trailing" constant="10" id="sGq-sH-5aC"/>
+                                    <constraint firstItem="0Bg-7T-8aw" firstAttribute="top" secondItem="7xR-Cg-mWn" secondAttribute="top" constant="5" id="sdb-Sh-iI1"/>
+                                    <constraint firstItem="Jtd-TT-Wjy" firstAttribute="top" secondItem="7xR-Cg-mWn" secondAttribute="top" constant="10" id="ufI-Mt-6yM"/>
+                                    <constraint firstItem="iFU-mN-DpX" firstAttribute="leading" secondItem="Jtd-TT-Wjy" secondAttribute="trailing" constant="10" id="v6S-uS-7yN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nvx-MZ-J27" secondAttribute="bottom" id="81O-8o-Wyn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7xR-Cg-mWn" secondAttribute="trailing" constant="10" id="Eyp-uN-Rfy"/>
+                            <constraint firstItem="nvx-MZ-J27" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q31-Wd-0e6"/>
+                            <constraint firstItem="7xR-Cg-mWn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Trq-T2-yaU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xR-Cg-mWn" secondAttribute="bottom" constant="5" id="YP8-N0-bGH"/>
+                            <constraint firstItem="nvx-MZ-J27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qLh-uV-PNk"/>
+                            <constraint firstItem="nvx-MZ-J27" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vCR-VV-srT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="gRC-VL-1Jt" id="t3Y-ei-o8t"/>
+                        <outlet property="conditionImageView" destination="Jtd-TT-Wjy" id="NjG-uX-gcx"/>
+                        <outlet property="mapView" destination="nvx-MZ-J27" id="NWd-rt-3W8"/>
+                        <outlet property="myView" destination="7xR-Cg-mWn" id="HZu-dM-Oc2"/>
+                        <outlet property="removeButton" destination="iFU-mN-DpX" id="C3j-HG-Feq"/>
+                        <outlet property="temperatureLabel" destination="0Bg-7T-8aw" id="U4I-f5-ATF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud.fog.fill" catalog="system" width="128" height="124"/>
+        <namedColor name="ViewColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ViewColor2">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
